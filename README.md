@@ -8,6 +8,8 @@ the font gets when it keeps only those characters. You can download the subset f
 
 Your files never leave your browser (no upload, no analytics).
 
+日本語: Godot の Web（HTML5）書き出し・モバイルで日本語フォントの容量を減らす無料の道具です。ゲームで使う文字だけを残したフォント（サブセット）をブラウザの中で作ります（アップロードなし）。
+
 ## Why
 
 CJK fonts are large (in our tests: Noto Sans JP variable 9.6 MB, Zen Maru Gothic 3.8 MB, M PLUS 1p 1.8 MB).
