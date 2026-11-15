@@ -22,25 +22,25 @@ footer{margin-top:2rem;font-size:.85rem;color:#444;border-top:1px solid #ccc;pad
 <h1>CJK Font Subset Preview for Godot</h1>
 <p>Free, runs entirely in your browser. Pick a font, give it your game's text, see how small the font gets, download the subset.</p>
 
-<fieldset id="drop"><legend>1. Font file (.ttf / .otf)</legend>
-<input type="file" id="font" accept=".ttf,.otf"> or drop a font file here
+<fieldset id="drop"><legend>1. Font file (.ttf / .otf) — フォントファイル</legend>
+<input type="file" id="font" accept=".ttf,.otf"> or drop a font file here（ここにドロップも可）
 <div id="fontinfo" class="note"></div>
 </fieldset>
 
-<fieldset><legend>2. Text your game uses</legend>
+<fieldset><legend>2. Text your game uses — ゲームで使う文字（台詞・UI・翻訳）</legend>
 <textarea id="text" placeholder="Paste dialogue, UI strings, translations..."></textarea>
-<p>Or add text files: <input type="file" id="textfiles" multiple accept=".txt,.csv,.json,.tscn,.tres,.gd,.po,.pot,.md,.yaml,.yml,.dialogue"></p>
+<p>Or add text files（文字のファイルを追加）: <input type="file" id="textfiles" multiple accept=".txt,.csv,.json,.tscn,.tres,.gd,.po,.pot,.md,.yaml,.yml,.dialogue"></p>
 <div id="filelist" class="note"></div>
 <p id="charcount">Unique characters: 0 (non-ASCII: 0)</p>
 </fieldset>
 
-<fieldset><legend>3. Options</legend>
+<fieldset><legend>3. Options — オプション</legend>
 <label><input type="checkbox" id="optAscii" checked> Always keep printable ASCII (U+0020–U+007E)</label><br>
-<label><input type="checkbox" id="optKana"> Keep all hiragana &amp; katakana (U+3040–U+30FF)</label><br>
-<label><input type="checkbox" id="optPunct"> Keep CJK punctuation &amp; full-width forms (U+3000–U+303F, U+FF00–U+FFEF)</label>
+<label><input type="checkbox" id="optKana"> Keep all hiragana &amp; katakana (U+3040–U+30FF) — ひらがな・カタカナを全部残す</label><br>
+<label><input type="checkbox" id="optPunct"> Keep CJK punctuation &amp; full-width forms (U+3000–U+303F, U+FF00–U+FFEF) — 句読点・全角の記号を残す</label>
 </fieldset>
 
-<p><button id="build" disabled>Build subset</button> <span id="err"></span></p>
+<p><button id="build" disabled>Build subset（サブセットを作る）</button> <span id="err"></span></p>
 
 <div id="result" hidden>
 <table>
@@ -51,10 +51,10 @@ footer{margin-top:2rem;font-size:.85rem;color:#444;border-top:1px solid #ccc;pad
 <tr><th>Characters requested</th><td id="rReq"></td></tr>
 <tr><th>Requested but missing from the font</th><td id="rMissing"></td></tr>
 </table>
-<p><button id="download">Download subset font</button></p>
+<p><button id="download">Download subset font（ダウンロード）</button></p>
 </div>
 
-<h2>Why this matters</h2>
+<h2>Why this matters（なぜ要るか）</h2>
 <p>CJK fonts contain thousands to tens of thousands of glyphs, so they are large (in our tests: Noto Sans JP variable 9.6 MB, Zen Maru Gothic 3.8 MB, M PLUS 1p 1.8 MB). Godot embeds the font in your exported project, so it directly inflates web (.pck / download size) and mobile builds. A game's script usually uses only part of those characters; a subset keeps only the glyphs you need.</p>
 <p>This page only previews and creates a <em>static</em> subset from the text you give it. Text added later (player names, new translations, user input) needs its characters to be in the subset too, or they will show as missing glyphs.</p>
 <p class="note">Only subset fonts whose license allows modification/subsetting (e.g. SIL OFL). OFL fonts with Reserved Font Names may require renaming.</p>
